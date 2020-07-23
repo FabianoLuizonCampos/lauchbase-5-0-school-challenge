@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TITLE -->
+    {% block title %}
+        <title>School by FabianoLC</title>
+    {% endblock title %}
+
+    <link rel="stylesheet" href="/styles/root.css">
+
+    <!-- STYLES PAGE -->
+    {% block styles %}
+    {% endblock styles %}    
+</head>
+<body>
+
+    <!-- PAGE NAME -->
+    <div class="page-name">
+        <a class="page-title" href="/">{{page}}</a>
+    </div>
+
+  
+    <!-- PAGE ID -->
+    <div id="{{ pageId }}">               
+        
+        {% block content %}
+
+                <!-- INCLUDE DO HEADER -->
+
+                <!-- PAGE CONTENT -->
+
+                <!-- INCLUDE DO FOOTER -->
+
+        {% endblock content %}
+
+    </div>
+
+    <!-- MODAL -->
+    {% block modal %}
+    {% endblock modal %} 
+
+    <!-- SCRIPTS -->
+    {% block scripts %}
+    {% endblock scripts %}
+
+</body>
+</html>

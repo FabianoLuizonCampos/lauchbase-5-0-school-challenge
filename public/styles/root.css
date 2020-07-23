@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ranchers&display=swap');
+
+/* font-family: 'Ranchers', cursive; */
+/* https://cdn.dribbble.com/users/418188/screenshots/6665427/design_for_education_illustration_tubik.png */
+/* https://dribbble.com/shots/6665427-Design-for-Education-Illustration?utm_source=Clipboard_Shot&utm_campaign=Tubik&utm_content=Design%20for%20Education%20Illustration&utm_medium=Social_Share */
+:root {
+    /* https://colorhunt.co/palette/196113 
+    --color-01: #1b262c;
+    --color-02: #0f4c75;
+    --color-03: #3282b8;
+    --color-04: #bbe1fa;
+    */
+
+    /* https://colorhunt.co/palette/191957 
+    --color-01: #4f8a8b;
+    --color-02: #ea907a;
+    --color-03: #ffcb74;
+    --color-04: #f4f6ff;
+    */
+
+    --color-01: #080c31;
+    --color-02: #fea9f7;
+    --color-03: #c9deee;
+    --color-04: #18436d;
+    --color-05: #f93e45;
+    --color-06: #a5779d;
+    --color-07: #fed9fd;
+}
+
+* {
+    border: 0;
+    box-sizing: border-box;   
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;   
+}
+
+body {
+        background-color: var(--color-07);
+        background-image: url("https://cdn.dribbble.com/users/418188/screenshots/6665427/design_for_education_illustration_tubik.png"); 
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-01);
+    font-weight: bold;
+}
+
+.page-name .page-title {
+    font-family: 'Ranchers', cursive;
+    font-weight: bolder;
+    font-size: 24px;
+    text-orientation: sideways;
+
+    color: var(--color-04);
+
+    position: fixed;
+    left: 8px;
+    top: 20px;
+
+    /*transform: rotate(270deg);*/
+    background-color: var(--color-06);
+
+    padding: 8px 24px;
+    border-radius: 16px;
+}
+
+.page-title:hover {
+    background-color: var(--color-02);
+}

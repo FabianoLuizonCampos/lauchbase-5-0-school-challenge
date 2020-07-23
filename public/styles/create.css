@@ -1,0 +1,125 @@
+#page-create .card{
+
+    background-color: rgba(8, 12, 49, 0.7);
+    /*backdrop-filter: blur(20px);*/
+
+    min-height: 400px;
+    width: 800px; 
+
+    margin: 45px auto;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.8);
+
+    animation: up 700ms ease-in-out;
+
+    border-radius: 24px;
+}
+
+@keyframes up {
+    
+    from {
+        opacity: 0;
+        transform: translateY(15px) ;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#page-create .card .avatar {
+    background: url('https://source.unsplash.com/collection/8874679/500x500') no-repeat center center / cover;
+
+    border-radius: 24px 0 0 24px;
+}
+
+.description {
+    padding: 32px;
+}
+
+.description h3 {
+    color: var(--color-02);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.description .item {
+    border-bottom: 1px solid rgba(254, 217, 253, 0.5);
+    padding: 16px 0;
+}
+
+.description .item:last-child {
+    border-bottom: none;
+}
+
+.description .item div:nth-child(1) {
+    color: var(--color-02); 
+    font-size: 14px; 
+    line-height: 24px;  
+    letter-spacing: 0.7px;
+    font-weight: normal;
+}
+
+.description .item div:nth-child(2) {
+    color: var(--color-07);
+    font-weight: bold;  
+    font-size: 18px;
+}
+
+
+.description .item input, 
+.description .item select, 
+::placeholder {
+    color: var(--color-07);
+    background-color: rgba(8, 12, 49, 0);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.description .item option {
+    background-color: var(--color-01);
+}
+
+.description .item input[type="date"] {
+    /*background: var(--color-07);*/
+  }
+
+.description .item input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--color-07);
+}
+
+.description .item span {
+    padding: 8px 16px;
+    background-color: var(--color-01);
+    border-radius: 16px;
+    margin-right: 4px;
+    margin-top: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+
+    display: inline-block;
+    
+}
+
+.description .item input[type="radio"] {
+    width: initial;
+    margin-right: 8px;
+}
+
+
+button[type="submit"] {
+    padding: 8px 32px;
+    background-color: var(--color-07);
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: var(--color-01);
+
+    margin-top: 32px;
+    width: 100%;
+}
+

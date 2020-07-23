@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+
+{% set pageId = "page-create" %}
+{% set page = "School Create Student" %}
+
+<!-- STYLES PAGE -->
+{% block styles %}
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/create.css">
+{% endblock styles %}    
+
+<!-- PAGE ID BEGIN -->
+
+<!-- PAGE CONTENT -->
+{% block content %}
+
+    <!-- INCLUDE DO HEADER -->
+    {% include "partials/header.njk"%}
+
+    <!-- PAGE CONTENT -->
+
+    <!-- FORM CONTENT -->
+    <form action="/students" method="POST" class="card">
+
+        <!-- SECTION AVATAR -->
+        <section class="avatar">
+
+        </section>
+
+        <!-- SECTION ITENS -->
+        <section class="description">
+
+            <h3>Create a Student</h3>
+
+            {% include "students/fields.njk"%}
+           
+
+        </section>
+
+    </form>
+
+   
+    <!-- INCLUDE DO FOOTER -->    
+        
+{% endblock content %}
+
+<!-- PAGE ID END -->
+   
+<!-- MODAL -->
+{% block modal %}    
+{% endblock modal %} 
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    <!--
+    <script src="/scripts/index.js"></script>
+    -->
+{% endblock scripts %} 

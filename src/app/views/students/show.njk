@@ -1,0 +1,102 @@
+{% extends "layout.njk" %}
+
+{% set pageId = "page-show" %}
+{% set page = "School Show Student" %}
+
+<!-- STYLES PAGE -->
+{% block styles %}
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/show.css">
+{% endblock styles %}    
+
+<!-- PAGE ID BEGIN -->
+
+<!-- PAGE CONTENT -->
+{% block content %}
+
+    <!-- INCLUDE DO HEADER -->
+    {% include "partials/header.njk"%}
+
+    <!-- PAGE CONTENT -->
+
+    <!-- FORM CONTENT -->
+    <div class="card">
+
+        <!-- SECTION AVATAR -->
+        <section class="avatar" style="background:url('{{student.avatar_url}}') no-repeat center center /cover" ></section>
+
+        <!-- SECTION ITENS -->
+        <section class="description">
+
+            <h3>Show Student</h3>
+
+            <!-- Name Item -->
+            <div class="item">
+                <div>Student´s Name</div>
+                <div>{{student.name}}</div>
+            </div>
+
+            <!-- Birthday Item -->
+            <div class="item">
+                <div>Student´s Birthday</div>
+                <div>{{student.birth}}</div>
+            </div>   
+
+            <!-- Email Item -->
+            <div class="item">
+                <div>Email</div>
+                <div>{{student.email}}</div>
+            </div>          
+
+            <!-- Education_Level Item -->
+            <div class="item">
+                <div>Current Year</div>
+                <div>
+                    {% if student.current_year == "6" %}
+                        6º year of Fundamental II
+                    {% endif %}
+                    {% if student.current_year == "7" %}
+                        7º year of Fundamental II
+                    {% endif %}
+                    {% if student.current_year == "8" %}
+                        8º year of Fundamental II
+                    {% endif %}
+                    {% if student.current_year == "9" %}
+                        9º year of Fundamental II
+                    {% endif %}
+                    {% if student.current_year == "10" %}
+                        1º year of High School
+                    {% endif %}   
+                    {% if student.current_year == "11" %}
+                        2º year of High School
+                    {% endif %}  
+                    {% if student.current_year == "12" %}
+                        3º year of High School
+                    {% endif %}  
+
+                </div>
+            </div>  
+
+            <a href="/students/{{student.id}}/edit" class="button">Edit</a>
+
+        </section>
+
+    </div>
+
+   
+    <!-- INCLUDE DO FOOTER -->    
+        
+{% endblock content %}
+
+<!-- PAGE ID END -->
+   
+<!-- MODAL -->
+{% block modal %}    
+{% endblock modal %} 
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    <!--
+    <script src="/scripts/index.js"></script>
+    -->
+{% endblock scripts %} 

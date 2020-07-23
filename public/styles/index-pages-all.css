@@ -1,0 +1,162 @@
+#page-index-all .card {
+    background-color: rgba(8, 12, 49, 0.7);
+    /*backdrop-filter: blur(20px);*/
+
+    min-height: 400px;
+    width: 800px; 
+
+    margin: 45px auto;
+
+    /*
+    display: grid;
+    grid-template-columns: 40% 60%;
+    */
+
+    box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.8);
+
+    animation: up 700ms ease-in-out;
+
+    border-radius: 24px;
+}
+
+@keyframes up {
+    
+    from {
+        opacity: 0;
+        transform: translateY(15px) ;
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* ----------- INDEX ------------ */
+
+.table-container {
+    display: block;
+    padding: 40px;
+    color: var(--color-02)
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container tr th {
+    text-align: left;   
+}
+
+td, 
+th {
+    padding: 16px;
+    border-bottom: 1px solid rgba(254, 217, 252, 0.6);
+}
+
+th {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+tbody tr td {
+    font-weight: bold;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid var(--color-01);
+}
+
+tbody tr td:last-child a {
+    background-color: var(--color-02);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
+    text-align: center;
+}
+
+/* -------- HEADER FILTER ------------ */
+
+.table-container .header-filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header-filter button[type="submit"], #btn-create {
+    background-color: var(--color-07);
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--color-01);
+    font-weight: bold;
+    width: 100px;
+    box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.7); 
+}
+
+.table-container .header-filter input {
+    padding: 8px 16px;
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+
+/* Pagination */
+.table-container {
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+    color: var(--color-02);
+    margin-right: 16px;
+    font-weight: bold;
+}
+
+.pagination a:hover {
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--color-07);
+}
+

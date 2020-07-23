@@ -1,0 +1,108 @@
+{% extends "layout.njk" %}
+
+{% set pageId = "page-show" %}
+{% set page = "School Show Teacher" %}
+
+<!-- STYLES PAGE -->
+{% block styles %}
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/show.css">
+{% endblock styles %}    
+
+<!-- PAGE ID BEGIN -->
+
+<!-- PAGE CONTENT -->
+{% block content %}
+
+    <!-- INCLUDE DO HEADER -->
+    {% include "partials/header.njk"%}
+
+    <!-- PAGE CONTENT -->
+
+    <!-- FORM CONTENT -->
+    <div class="card">
+
+        <!-- SECTION AVATAR -->
+        <section class="avatar" style="background:url('{{teacher.avatar_url}}') no-repeat center center /cover" ></section>
+
+        <!-- SECTION ITENS -->
+        <section class="description">
+
+            <h3>Show Teacher</h3>
+
+            <!-- Name Item -->
+            <div class="item">
+                <div>Teachers´s Name</div>
+                <div>{{teacher.name}}</div>
+            </div>
+
+            <!-- Teacher´s Age Item -->
+            <div class="item">
+                <div>Teachers´s Age</div>
+                <div>{{teacher.age}}</div>
+            </div>            
+
+            <!-- Education_Level Item -->
+            <div class="item">
+                <div>Education Level</div>
+                <div>
+                    {% if teacher.education_level == "Medio" %}
+                        Ensino Médio Completo
+                    {% endif %}
+                     {% if teacher.education_level == "Superior" %}
+                        Ensino Superior Completo
+                    {% endif %}
+                    {% if teacher.education_level == "Mestrado"%}
+                        Mestrado
+                    {% endif %}
+                     {% if teacher.education_level == "Doutorado"%}
+                        Doutorado
+                    {% endif %}                        
+                </div>
+            </div>  
+
+            <!-- Class_Type Ty Item -->
+            <div class="item">
+                <div>Class Type</div>
+                <div>{{teacher.class_type}}</div>
+            </div> 
+
+            <!-- Subjects_Taughts Ty Item -->
+            <div class="item">
+                <div>Subjects</div>
+                <div>
+                    {% for subject in teacher.subjects_taught%}
+                        <span>{{subject}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Since at Item -->
+            <div class="item">
+                <div>Since</div>
+                <div>{{teacher.create_at}}</div>
+            </div>
+
+            <a href="/teachers/{{teacher.id}}/edit" class="button">Edit</a>
+
+        </section>
+
+    </div>
+
+   
+    <!-- INCLUDE DO FOOTER -->    
+        
+{% endblock content %}
+
+<!-- PAGE ID END -->
+   
+<!-- MODAL -->
+{% block modal %}    
+{% endblock modal %} 
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    <!--
+    <script src="/scripts/index.js"></script>
+    -->
+{% endblock scripts %} 

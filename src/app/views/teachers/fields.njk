@@ -1,0 +1,93 @@
+ <!-- Name Item -->
+<div class="item">
+    <div>Teachers´s Name</div>
+    <div>
+        <input type="text" name="name" placeholder="Type Teachers´s Name" value="{{teacher.name}}">
+    </div>
+</div>
+
+<!-- Avatar_URL Item -->
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="https://" value="{{teacher.avatar_url}}">
+    </div>
+</div>
+
+<!-- Birth_Date Item -->
+<div class="item">
+    <div>Birth Date</div>
+    <div>
+        <input type="date" name="birth_date" placeholder="" value="{{teacher.birth_date}}">
+    </div>
+</div>            
+
+<!-- Education_Level Item -->
+<div class="item">
+    <div>Education Level</div>
+    <div>
+        <select name="education_level" >
+            <option value="Medio"
+                {% if teacher.education_level == "Medio" %}
+                    selected
+                {% endif %}
+                >Ensino Médio Completo
+            </option>
+
+            <option value="Superior"
+                {% if teacher.education_level == "Superior" %}
+                    selected
+                {% endif %}
+                >Ensino Superior Completo
+            </option>
+
+            <option value="Mestrado"
+                {% if teacher.education_level == "Mestrado" %}
+                    selected
+                {% endif %}
+                >Mestrado
+            </option>
+
+            <option value="Doutorado"
+                {% if teacher.education_level == "Doutorado" %}
+                    selected
+                {% endif %}
+                >Doutorado
+            </option>
+        </select>
+    </div>
+</div>  
+
+<!-- Class_Type Ty Item -->
+<div class="item">
+    <div>Class Type</div>
+    <div>
+
+        <span>
+            <input type="radio" name="class_type" value="On-site" 
+                {% if teacher.class_type == "On-site" %}
+                    checked
+                {% endif %}
+            >On-site
+        </span>
+
+        <span>
+            <input type="radio" name="class_type" value="Online"
+                 {% if teacher.class_type == "Online" %}
+                    checked
+                {% endif %}          
+            >Online
+        </span>
+
+    </div>
+</div> 
+
+<!-- Subjects_Taughts Ty Item -->
+<div class="item">
+    <div>Subjects</div>
+    <div>
+        <input type="text" name="subjects_taught" placeholder="Use comma separation" value="{{teacher.subjects_taught}}">
+    </div>
+</div>
+
+<button type="submit">Save</button>

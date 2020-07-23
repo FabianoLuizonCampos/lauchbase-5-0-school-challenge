@@ -1,0 +1,65 @@
+{% extends "layout.njk" %}
+
+{% set pageId = "page-edit" %}
+{% set page = "School Edit Student" %}
+
+<!-- STYLES PAGE -->
+{% block styles %}
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/edit.css">
+{% endblock styles %}    
+
+<!-- PAGE ID BEGIN -->
+
+<!-- PAGE CONTENT -->
+{% block content %}
+
+    <!-- INCLUDE DO HEADER -->
+    {% include "partials/header.njk"%}
+
+    <!-- PAGE CONTENT -->
+
+    <!-- FORM CONTENT -->
+    <div class="card">
+
+        <!-- SECTION AVATAR -->
+        <section class="avatar" style="background:url('{{student.avatar_url}}') no-repeat center center /cover" ></section>
+
+        <!-- SECTION ITENS -->
+        <section class="description">
+
+            <form method="post" action="/students?_method=PUT">
+
+                <h3>Edit Student</h3>
+                
+                {% include "students/fields.njk"%}
+
+                 <input type="hidden" name="id" value={{student.id}}> 
+
+            </form>
+
+
+            <form id="form-delete" method="POST" action="/students?_method=DELETE">  
+                <input type="hidden" name="id" value={{student.id}}> 
+                <button  type="submit">Delete</button>       
+            </form>
+           
+        </section>
+
+    </div>
+
+   
+    <!-- INCLUDE DO FOOTER -->    
+        
+{% endblock content %}
+
+<!-- PAGE ID END -->
+   
+<!-- MODAL -->
+{% block modal %}    
+{% endblock modal %} 
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    <script src="/scripts/confirmDelete.js"></script>
+{% endblock scripts %} 

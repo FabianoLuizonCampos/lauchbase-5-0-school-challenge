@@ -1,0 +1,75 @@
+{% extends "layout.njk" %}
+
+{% set pageId = "page-index-all" %}
+{% set page = "School Index Student" %}
+
+<!-- STYLES PAGE -->
+{% block styles %}
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/index-pages-all.css">
+{% endblock styles %}     
+
+<!-- PAGE CONTENT -->
+{% block content %}
+
+    {% include "partials/header.njk"%}
+    
+    <div class="card table-container">  
+
+        <div class="header-filter">
+
+            <a id="btn-create" href="/students/create">New</a>
+            <form action="/students" method="get">
+                <input type="text" name="filter" placeholder="Name or Email" value="{{filter}}">
+                <button type="submit">Filter</button>
+            </form>
+
+        </div>
+
+
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>
+                        <span style="background-image: url( {{ student.avatar_url }} )"></span>
+                        {{student.name}}</td>
+                        <td>{{student.email}}</td>
+                        <td><a href="/students/{{student.id}}">Show</a></td>
+                    </tr>
+                {% endfor %}                
+            </tbody>
+        </table>
+
+        
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}} 
+            data-filter={{filter}}   
+        ></div>
+
+    </div>    
+    
+    
+{% endblock content %}
+   
+<!-- MODAL -->
+{% block modal %}    
+{% endblock modal %} 
+
+<!-- SCRIPTS -->
+{% block scripts %}
+    
+    <script src="/scripts/paginatePages.js"></script>
+    
+{% endblock scripts %} 
+
+
+
